@@ -8,7 +8,7 @@ const s3 = new aws.S3({
     secretAccessKey: keys.secretAccessKey,
     signatureVersion: 'v4',
     region: 'eu-central-1',
-    endpoint: 'http://s3.eu-central-1.amazonaws.com'
+    endpoint: 'https://s3.eu-central-1.amazonaws.com'
 })
 
 module.exports = app => {
