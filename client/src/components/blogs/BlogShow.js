@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchBlog } from '../../actions';
+const staticUrl = 'https://advanced-node-js-image-upload.s3.eu-central-1.amazonaws.com';
 
 class BlogShow extends Component {
   componentDidMount() {
@@ -12,12 +13,15 @@ class BlogShow extends Component {
       return '';
     }
 
-    const { title, content } = this.props.blog;
+    const { title, content, imageUrl } = this.props.blog;
 
     return (
       <div>
         <h3>{title}</h3>
         <p>{content}</p>
+        <p>
+          {imageUrl && <img src={`${staticUrl}/${imageUrl}`} />}
+        </p>
       </div>
     );
   }
